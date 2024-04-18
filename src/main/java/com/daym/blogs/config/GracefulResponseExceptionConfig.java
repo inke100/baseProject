@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/9
  * Time: 10:56
  * To change this template use File | Settings | File Templates.

@@ -6,6 +6,13 @@ spring:
     password: root
     url: jdbc:mysql://127.0.0.1:3306/blog
     driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+     # password: 123456
+      database: 11
+
 logging:
   level:
    root: debug
@@ -39,27 +46,6 @@ graceful-response:
     - springfox.**
 
 
-#springdoc:
-#  api-docs:
-#    # ????????
-#    enabled: true
-#    groups:
-#      enabled: true
-#
-#  swagger-ui:
-#    # ????????????? true???????????????????/?????
-#    persistAuthorization: true
-#    url: /v3/api-docs
-#    configUrl:
-#    disable-swagger-default-url: false
-#    display-request-duration: true
-#  override-with-generic-response: true
-##  group-configs[0]:
-
-
-#      #packages-to-scan: com.feiniaojin.gracefulresponse.advice.*,com.feiniaojin.gracefulresponse.defaults.*
-springfox:
-  documentation:
-    swagger:
-      v2:
-        enabled: true
+springdoc:
+  api-docs:
+    enabled: true

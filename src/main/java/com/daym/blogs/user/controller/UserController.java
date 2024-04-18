@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/2
  * Time: 11:11
  * To change this template use File | Settings | File Templates.
@@ -41,8 +41,18 @@ public class UserController {
     }
     @GetMapping("/")
     @ResponseBody
-    public Object getUser1(){
+    public String getUser1(){
         return "12345";
+    }
+    @GetMapping("/boolean")
+    @ResponseBody
+    public boolean getTrue(){
+        return true;
+    }
+    @GetMapping("/boolean2")
+    @ResponseBody
+    public Boolean getTrue2(){
+        return true;
     }
     @GetMapping("/sys")
     @ResponseBody

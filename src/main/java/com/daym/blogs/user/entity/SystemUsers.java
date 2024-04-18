@@ -1,6 +1,5 @@
 package com.daym.blogs.user.entity;
 
-import com.daym.blogs.base.BaseEntity;
 import lombok.Data;
 
 import java.io.Serializable;

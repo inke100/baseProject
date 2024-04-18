@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/9
  * Time: 11:24
  * To change this template use File | Settings | File Templates.

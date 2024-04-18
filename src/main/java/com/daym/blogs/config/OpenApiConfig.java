@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/9
  * Time: 17:38
  * To change this template use File | Settings | File Templates.
@@ -28,10 +28,7 @@ public class OpenApiConfig {
                         .contact(new Contact().name("作者").email("邮箱").url("可以写你的博客地址或不填"))
                         .version("v3.0"));
     }
-  /*  @Bean
-    public GlobalResponseOperationCustomizer globalResponseOperationCustomizer() {
-        return new GlobalResponseOperationCustomizer();
-    }*/
+
 
 
 }

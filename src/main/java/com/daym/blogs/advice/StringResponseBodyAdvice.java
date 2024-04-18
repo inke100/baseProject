@@ -1,5 +1,9 @@
 package com.daym.blogs.advice;
 
+import cn.hutool.json.JSONUtil;
+import com.daym.blogs.constant.CommonConstant;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.feiniaojin.gracefulresponse.GracefulResponseProperties;
 import com.feiniaojin.gracefulresponse.api.ExcludeFromGracefulResponse;
 import com.feiniaojin.gracefulresponse.api.ResponseFactory;
@@ -20,20 +24,23 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/9
  * Time: 9:32
  * To change this template use File | Settings | File Templates.
  * Description:对String 的返回调整
+ * todo 后续调整
  */
-//@ControllerAdvice
-@Order(value = 1000)
+@ControllerAdvice
+@Order(value = 999)
 public class StringResponseBodyAdvice implements ResponseBodyAdvice<Object> {
 
     private final Logger logger = LoggerFactory.getLogger(StringResponseBodyAdvice.class);
@@ -42,6 +49,9 @@ public class StringResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     private ResponseFactory responseFactory;
     @Resource
     private GracefulResponseProperties properties;
+
+    @Resource
+    private ObjectMapper objectMapper;
 
     /**
      * 路径过滤器
@@ -102,7 +112,10 @@ public class StringResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         } else if (body instanceof Response) {
             return body;
         } else {
-            return responseFactory.newSuccessInstance(body);
+            serverHttpResponse.getHeaders().setContentType(MediaType.APPLICATION_JSON);
+           /* Map<String,Object> map=new HashMap<>();
+            map.put(CommonConstant.SINGLE_KEY,body);*/
+           return JSONUtil.toJsonStr(responseFactory.newSuccessInstance(body));
         }
     }
 
