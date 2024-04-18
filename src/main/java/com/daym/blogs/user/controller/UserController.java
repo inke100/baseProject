@@ -1,5 +1,6 @@
 package com.daym.blogs.user.controller;
 
+import com.daym.blogs.base.controller.BaseController;
 import com.daym.blogs.user.entity.SystemUsers;
 import com.daym.blogs.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -27,7 +28,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController<SystemUsers>{
 
     @Resource
     private UserService userService;

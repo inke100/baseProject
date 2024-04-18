@@ -1,4 +1,4 @@
-package com.daym.blogs.base;
+package com.daym.blogs.base.entity;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created with IntelliJ IDEA.
  *
- * @author: mayongchang
+ * @author:  
  * Date: 2024/4/8
  * Time: 16:14
  * To change this template use File | Settings | File Templates.
